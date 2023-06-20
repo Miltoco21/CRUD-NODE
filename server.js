@@ -26,6 +26,6 @@ app.use('/api/horarios',rutaagenda)
 
 
 //Configuracion basica del server
-app.listen(port, ()=> {
+app.listen(port, "0.0.0.0",()=> {
   console.log(`El servidor esta corriento correctamente en puerto ${port}`);
 }) 
