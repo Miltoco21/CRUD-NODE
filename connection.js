@@ -2,7 +2,8 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true) //Linea de codigo soluciona bug de moongose 7
 //mongoose.connect('mongodb://localhost:27017/crudmern') // conexion sistema local mongoDB
-const URL_MONGOCONNECTION = mongoose.connect(process.env.URL_MONGOCONNECTION)
+const URL_MONGOCONNECTION = mongoose.connect(process.env.URL_MONGOCONNECTION,{ useNewUrlParser: true,
+  useUnifiedTopology: true,});
 
 
 
