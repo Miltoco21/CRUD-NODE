@@ -9,6 +9,7 @@ const eschemausuario = new eschema({
   nombre:String,
   email:String,
   telefono:String,
+  instagram:String,
   idusuario:String
 })
 
@@ -23,6 +24,7 @@ router.post('/agregarusuario', (req,res)=>{
     nombre:req.body.nombre,
     email:req.body.email,
     telefono:req.body.telefono,
+    instagram:req.body.instagram,
     idusuario:req.body.idusuario
   })
   nuevousuario.save(function(err){
@@ -61,6 +63,7 @@ router.post('/actualizausuario', (req,res)=>{
   ModeloUsuario.findOneAndUpdate({idusuario:req.body.idusuario},{
     nombre:req.body.nombre,
     email:req.body.email,
+    instagram:req.body.instagram,
     telefono:req.body.telefono
   },(err)=> {
     if(!err){
@@ -71,10 +74,11 @@ router.post('/actualizausuario', (req,res)=>{
 
   })
   
+  
 })
 
 //Borrar usuario
-router.post('/borrarusuario', (req,res)=>{
+router.post('/borrarusuario', (req,res)=>{ 
   ModeloUsuario.findOneAndDelete({idusuario:req.body.idusuario},(err) =>{
    if(!err){
      res.send('Usuario borrado con exito')
