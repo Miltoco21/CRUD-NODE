@@ -15,7 +15,7 @@ const eschemausuario = new eschema({
 
 const ModeloUsuario = mongoose.model('usuarios',eschemausuario)
 
-module.exports = router
+module.exports = router 
 
 
 //Ruta y logica de AGREGAR(post) usuarios
